@@ -45,3 +45,20 @@
   #right-container {
     width: 60%;
   }
+
+  .todo-card {
+    width: 100%;
+    border: 1px solid black;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+  }
+
+  .card-bot {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid black;
+  }
