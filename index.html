@@ -26,17 +26,29 @@
                         <!-- title of todo -->
                         <input type="text" placeholder="Title"><br/>
                         <!-- description of todo -->
-                        <textarea type="text" placeholder="Description"></textarea><br/>
+                        <textarea type="text" placeholder="Description"></textarea>
                         <!-- importance -->
-                        <label>1</label><input type="radio">
-                        <label>2</label><input type="radio">
-                        <label>3</label><input type="radio">
-                        <label>4</label><input type="radio">
-                        <label>5</label><input type="radio"><br/>
-                        <button id="create-button">create</button>
+                        <div>
+                            <label>1</label><input type="radio">
+                            <label>2</label><input type="radio">
+                            <label>3</label><input type="radio">
+                            <label>4</label><input type="radio">
+                            <label>5</label><input type="radio">
+                        </div>
+                        <div><button id="create-button">create</button></div>
                     </form>
                     <!-- search bar -->
-                    <input type="text" placeholder="Search"><button id="search">search</button><button id="remove">X</button>
+                    <input type="text" placeholder="Search">
+                    <button id="search">search</button>
+                    <button id="remove">X</button>
+                    <!-- sort section -->
+                    <div>
+                        <div>Arrange By:</div>
+                        <div>
+                            <label>Date</label><input type="radio">
+                            <label>Importance</label><input type="radio">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
