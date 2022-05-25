@@ -18,10 +18,30 @@
     margin-right: 10%;
   }
 
+  /* list of todos*/
   #left-container {
     width: 40%;
+    border: 1px solid gray;
+    margin-right: 10%;
   }
 
+  #left-container > h1 {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
+    margin-top: 2%;
+  }
+
+  #left-container li{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 18%;
+    margin-bottom: 5%;
+  }
+
+  /* todos */
   #right-container {
     width: 60%;
   }
