@@ -21,6 +21,7 @@
                 </ul>
             </div>
             <div id="right-container">
+                <!-- form section -->
                 <div id="form-container">
                     <form id="form">
                         <!-- title of todo -->
@@ -38,30 +39,34 @@
                         </div>
                         <div><button id="create-button">Create</button></div>
                     </form>
-                    <!-- search bar -->
-                    <input type="text" placeholder="Search">
-                    <button id="search">search</button>
-                    <button id="remove">X</button>
-                    <!-- sort section -->
-                    <div>
-                        <div>Arrange By:</div>
-                        <div>
-                            <label>Date</label><input type="radio">
-                            <label>Importance</label><input type="radio">
-                        </div>
+                </div>
+                <!-- search bar -->
+                <div id="search-section">
+                    <input type="text" placeholder="Search" id="search-bar">
+                    <div id="search-buttons">
+                        <button id="search">Search</button>
+                        <button id="remove">X</button>
                     </div>
-                    <div class="todo-card">
-                        <div class="top">
-                            <div>id</div>
-                            <div>Title</div>
-                            <div>11-11-2020</div>
-                        </div>
-                        <div>description</div>
-                        <div class="card-bot">
-                            <button>Done</button>
-                            <button>Change</button>
-                            <button>Delete</button>
-                        </div>
+                </div>
+                <!-- sort section -->
+                <div>
+                    <div>Arrange By:</div>
+                    <div>
+                        <label>Date</label><input type="radio">
+                        <label>Importance</label><input type="radio">
+                    </div>
+                </div>
+                <div class="todo-card">
+                    <div class="top">
+                        <div>id</div>
+                        <div>Title</div>
+                        <div>11-11-2020</div>
+                    </div>
+                    <div>description</div>
+                    <div class="card-bot">
+                        <button>Done</button>
+                        <button>Change</button>
+                        <button>Delete</button>
                     </div>
                 </div>
             </div>

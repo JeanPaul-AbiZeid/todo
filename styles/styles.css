@@ -46,6 +46,7 @@
     width: 65%;
   }
 
+  /* form */
   #form {
     border: 1px solid black;
   }
@@ -93,6 +94,38 @@
     font-weight: bold;
   }
 
+  /* search */
+  #search-section {
+    margin-top: 2%;
+    display: flex;
+    width: 100%;
+  }
+
+  #search-bar {
+    height: 25px;
+    font-size: 20px;
+    width: 35%;
+  }
+
+  #search-buttons {
+    width: 65%;
+    margin-left: 1%;
+  }
+  #search {
+    height: 25px;
+    border-radius: 5px;
+    width: 13%;
+    background-color: lightgray;
+  }
+
+  #remove {
+    height: 25px;
+    border-radius: 5px;
+    width: 4%;
+    background-color: red;
+  }
+
+  /* cards */
   .todo-card {
     width: 100%;
     border: 1px solid black;
