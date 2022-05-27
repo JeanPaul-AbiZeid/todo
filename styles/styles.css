@@ -137,6 +137,7 @@
   #sort label{
     margin-right: 1%;
   }
+
   /* cards */
   .todo-card {
     width: 100%;
@@ -145,12 +146,41 @@
 
   .top {
     display: flex;
+    margin-left: 1%;
+    margin-right: 1%;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    
   }
 
+  .desc {
+    border-top: 1px solid black;
+    height: 80px;
+  }
+
+  .desc p {
+    margin-left: 1%;
+  }
   .card-bot {
     display: flex;
     justify-content: space-around;
+    height: 30px;
     border-top: 1px solid black;
+  }
+
+  #done {
+    background-color: greenyellow;
+    width: 40px;
+    height: 30px;
+  }
+
+  #change {
+    background-color: yellow;
+    height: 30px;
+    width: 80px;
+  }
+
+  #delete {
+    background-color: red;
+    height: 30px;
+    width: 60px;
   }
