@@ -22,20 +22,21 @@
             </div>
             <div id="right-container">
                 <div id="form-container">
-                    <form>
+                    <form id="form">
                         <!-- title of todo -->
-                        <input type="text" placeholder="Title"><br/>
+                        <input type="text" placeholder="Title" id="title"><br/>
                         <!-- description of todo -->
-                        <textarea type="text" placeholder="Description"></textarea>
+                        <textarea type="text" placeholder="Description" id="description"></textarea>
                         <!-- importance -->
-                        <div>
+                        <div id="importance">
+                            <h4>Importance:</h4>
                             <label>1</label><input type="radio">
                             <label>2</label><input type="radio">
                             <label>3</label><input type="radio">
                             <label>4</label><input type="radio">
                             <label>5</label><input type="radio">
                         </div>
-                        <div><button id="create-button">create</button></div>
+                        <div><button id="create-button">Create</button></div>
                     </form>
                     <!-- search bar -->
                     <input type="text" placeholder="Search">

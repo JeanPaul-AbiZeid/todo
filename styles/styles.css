@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(246, 246, 83);
+    background-color: rgb(255, 255, 180);
   }
 
   #main-title{
@@ -20,9 +20,9 @@
 
   /* list of todos*/
   #left-container {
-    width: 40%;
+    width: 35%;
     border: 1px solid gray;
-    margin-right: 10%;
+    margin-right: 5%;
   }
 
   #left-container > h1 {
@@ -43,7 +43,54 @@
 
   /* todos */
   #right-container {
-    width: 60%;
+    width: 65%;
+  }
+
+  #form {
+    border: 1px solid black;
+  }
+
+  #title {
+    margin-left: 2%;
+    margin-top: 3%;
+    height: 30px;
+    width: 35%;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  #description {
+    margin-left: 2%;
+    width: 90%;
+    font-size: 20px;
+    height: 100px;
+  }
+
+  #importance {
+    margin-left: 2%;
+    width: 30%;
+    align-items: center;
+  }
+  
+  #importance h4{
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+
+  #importance label{
+    margin-right: 1.5%;
+  }
+
+  #create-button {
+    margin-top: 1.5%;
+    margin-left: 2%;
+    border-radius: 5px;
+    margin-bottom: 1%;
+    height: 25px;
+    width: 60px;
+    background-color: rgb(0, 219, 0);
+    font-size: 15px;
+    font-weight: bold;
   }
 
   .todo-card {
