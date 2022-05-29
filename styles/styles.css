@@ -92,6 +92,7 @@
     background-color: rgb(0, 219, 0);
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
   }
 
   /* search */
@@ -116,6 +117,7 @@
     border-radius: 5px;
     width: 13%;
     background-color: lightgray;
+    cursor: pointer;
   }
 
   #remove {
@@ -123,6 +125,7 @@
     border-radius: 5px;
     width: 4%;
     background-color: red;
+    cursor: pointer;
   }
 
   /* sort */
@@ -172,16 +175,19 @@
     background-color: greenyellow;
     width: 40px;
     height: 30px;
+    cursor: pointer;
   }
 
   #change {
     background-color: yellow;
     height: 30px;
     width: 80px;
+    cursor: pointer;
   }
 
   #delete {
     background-color: red;
     height: 30px;
     width: 60px;
+    cursor: pointer;
   }
