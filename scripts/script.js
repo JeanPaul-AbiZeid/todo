@@ -10,6 +10,7 @@ function date() {
     let time = d.getTime();
 }
 
+//search function
 $(document).ready(function(){
     $("#myInput").on("keyup", function(){
         var value = $(this).val().toLowerCase();
@@ -19,22 +20,18 @@ $(document).ready(function(){
     });
 });
 
-
-// function getImportance(){
-//     var importance;
-//     var result = document.getElementsByName("rating-number");
-//     for(var index = 0; index, result.length; index++){
-//         if(result[index].checked){
-//             importance = result[index].value;
-//             console.log(importance);
-//         }
-//     }
-// }
-
+//get importance value
 function getImportance(){
     var check_value = $('input[name ="rating-number"]:checked').val();
     console.log(check_value);
 }
 
-var create = document.getElementById("create-button");
-create.addEventListener("click", getImportance);
+//get title and description
+function getInfo(){
+    var todo_title = $('#title').val();
+    var todo_desc = $('#description').val();
+}
+$(document).ready(function(){
+    $("#create-button").click(getInfo)
+})
+
