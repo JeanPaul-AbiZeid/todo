@@ -34,6 +34,13 @@ function reset(){
     $( ".radio-btn" ).prop( "checked", false );
 }
 
+function createLi(title){
+    var list = document.getElementById("myList");
+    var element = document.createElement("li");
+    element.innerHTML = title;
+    list.appendChild(element);
+}
+
 function createRow(id, title, description, importance, time){
     var table = document.getElementById("myTable");
     var row = document.createElement("tr");
