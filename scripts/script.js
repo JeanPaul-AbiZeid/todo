@@ -1,9 +1,9 @@
+let todo_id;
 //generating random id
 function randomId() {
     var rand_index = Math.floor(Math.random() * 100000000 + 1);
-    console.log(rand_index);
+    return todo_id = rand_index;
 };
-
 
 //search function
 $(document).ready(function(){
@@ -109,8 +109,15 @@ $(document).ready(function(){
         const d = new Date();
         let time = d.getTime();
         
+        //generating id
+        let id = randomId();
+        
+        //adding
+        createLi(title);
+        createRow(id, title, desc, point, time);
 
         //resetting values
         reset();
     })
 })
+
