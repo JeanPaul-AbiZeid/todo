@@ -31,47 +31,15 @@
                         <!-- importance -->
                         <div id="importance">
                             <h4>Importance:</h4>
-                            <label>1</label><input type="radio" name="rating-number">
-                            <label>2</label><input type="radio" name="rating-number">
-                            <label>3</label><input type="radio" name="rating-number">
-                            <label>4</label><input type="radio" name="rating-number">
-                            <label>5</label><input type="radio" name="rating-number">
+                            <label>1</label><input type="radio" name="rating-number" value="1">
+                            <label>2</label><input type="radio" name="rating-number" value="2">
+                            <label>3</label><input type="radio" name="rating-number" value="3">
+                            <label>4</label><input type="radio" name="rating-number" value="4">
+                            <label>5</label><input type="radio" name="rating-number" value="5">
                         </div>
                         <div><button id="create-button">Create</button></div>
                     </form>
                 </div>
-                <!-- search bar
-                <div id="search-section">
-                    <input type="text" placeholder="Search" id="search-bar">
-                    <div id="search-buttons">
-                        <button id="search">Search</button>
-                        <button id="remove">X</button>
-                    </div>
-                </div>
-                sort section
-                <div id="sort">
-                    <div>Arrange By:</div>
-                    <div>
-                        <label>Date</label><input type="radio">
-                        <label>Importance</label><input type="radio">
-                    </div>
-                </div>
-                todo card
-                <div class="todo-card">
-                    <div class="top">
-                        <div>id</div>
-                        <div>Title</div>
-                        <div>11-11-2020</div>
-                    </div>
-                    <div class="desc">
-                        <p>description</p>
-                    </div>
-                    <div class="card-bot">
-                        <button id="done">Done</button>
-                        <button id="change">Change</button>
-                        <button id="delete">Delete</button>
-                    </div>
-                </div> -->
             </div>
         </div>
         <input id="myInput" type="text" placeholder="Search.." class="search">
@@ -92,6 +60,9 @@
                     <th>asdgasdgasg</th>
                     <th>3</th>
                     <th>timestamp</th>
+                    <th class="button done">&#9989</th>
+                    <th class="button change">&#128393</th>
+                    <th class="button delete">&#10060</th>
                 </tr>
                 <tr>
                     <th>2</th>
@@ -99,10 +70,13 @@
                     <th>jnoojnlj</th>
                     <th>5</th>
                     <th>timestamp</th>
+                    <th class="button done">&#9989</th>
+                    <th class="button change">&#128393</th>
+                    <th class="button delete">&#10060</th>
                 </tr>
             </tbody>
         </table>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="./scripts/script.js"></script>
     </body>
 </html>
