@@ -20,18 +20,27 @@ $(document).ready(function(){
     });
 });
 
-//get importance value
-function getImportance(){
-    var check_value = $('input[name ="rating-number"]:checked').val();
-    console.log(check_value);
-}
-
 //get title and description
 function getInfo(){
     var todo_title = $('#title').val();
     var todo_desc = $('#description').val();
+    var check_value = $('input[name ="rating-number"]:checked').val();
+    console.log(todo_title);
+    console.log(todo_desc);
+    console.log(check_value);
+}
+
+function reset(){
+    $('input[id ="title"]').val("");
+    $('textarea[id ="description"]').val("");
+    $( ".radio-btn" ).prop( "checked", false );
+    // document.getElementById("description").value = "";
 }
 $(document).ready(function(){
-    $("#create-button").click(getInfo)
+    $("#create-button").click(function(){
+        getInfo();
+        reset();
+
+    })
 })
 
