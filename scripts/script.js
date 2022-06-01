@@ -20,14 +20,21 @@ $(document).ready(function(){
 });
 
 
+// function getImportance(){
+//     var importance;
+//     var result = document.getElementsByName("rating-number");
+//     for(var index = 0; index, result.length; index++){
+//         if(result[index].checked){
+//             importance = result[index].value;
+//             console.log(importance);
+//         }
+//     }
+// }
+
 function getImportance(){
-    var importance;
-    var result = document.getElementsByName("rating-number");
-    for(var index = 0; index , result.length; index++){
-        if(result[0].checked){
-            importance = result[0].value;
-            console.log(importance);
-        }
-    }
-    
+    var check_value = $('input[name ="rating-number"]:checked').val();
+    console.log(check_value);
 }
+
+var create = document.getElementById("create-button");
+create.addEventListener("click", getImportance);
