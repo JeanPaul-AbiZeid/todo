@@ -100,25 +100,26 @@ function createRow(id, title, description, importance, time){
     remove_class.add("delete");
     remove.innerHTML = "&#10060";
     row.appendChild(remove);
+    remove.setAttribute("id", id);
+    remove.setAttribute('onclick',`removeRow(${id});`);
 
-    // Click on a delete button to hide the current list item
-    deleteRow();
-    //click on edit
+    
     openPopup();
 }
 
 
 $(document).ready(function(){
-    for(let i = 0; localStorage.length; i++){
+    for(let i = 0; i<localStorage.length; i++){
         let saved_todo = JSON.parse(localStorage.getItem(localStorage.key(i)));
-
+        
         let id = saved_todo.id;
         let title = saved_todo.title;
         let description = saved_todo.description;
         let point = saved_todo.point;
         let date = saved_todo.date;
 
-        createRow(id, title, description, point, date);        
+        createRow(id, title, description, point, date);
+              
     }
 })
 // click create
@@ -153,7 +154,7 @@ $(document).ready(function(){
     })
 })
 function openPopup(){
-        // Get the modal
+    // Get the modal
     var modal = document.getElementById("myModal");
 
     // Get the button that opens the modal
@@ -182,16 +183,37 @@ function openPopup(){
     }}
 }
 
-// Click on a remove button to hide the current list item
-function deleteRow(){
-    var delete_row = document.getElementsByClassName("delete");
-    var i;
-    for (i = 0; i < delete_row.length; i++) {
-    delete_row[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
+function removeRow(id) {
+    var div = document.getElementById(id).parentElement;
+    div.style.display = "none";
+    localStorage.removeItem(id)
 }
-}
+
+// function editRow(){
+//     var edit_row = document.getElementsByClassName("change");
+//     var save_button = document.getElementById("save-button")
+//     var i;
+//     for (i = 0; i < edit_row.length; i++) {
+//     edit_row[i].onclick = function() {
+//         var new_info = []
+//         if($('#title').val()){
+//             var new_todo_title = $('#title').val();
+//             edit_row[i].title.innerHTML = new_todo_title;
+//         }
+//         if($('#description').val()){
+//             var todo_desc = $('#description').val();
+//             edit_row[i].title.innerHTML = new_todo_desc;
+//         }
+//         if($('input[name ="rating-number"]:checked').val()){
+//             var new_points = $('input[name ="rating-number"]:checked').val();
+//             edit_row[i].title.innerHTML = new_todo_points;
+//         save_button.onclick = function(){
+
+//         }
+//         }
+    
+//     }
+// }
+// }
+
 openPopup();
-deleteRow();
