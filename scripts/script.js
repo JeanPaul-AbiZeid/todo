@@ -51,7 +51,7 @@ function createRow(id, title, description, importance, time){
     var table = document.getElementById("myTable");
     var row = document.createElement("tr");
 
-    table.appendChild(row);
+    table.prepend(row);
     //id
     var col_id = document.createElement("th");
     col_id.innerHTML = id;
@@ -103,6 +103,8 @@ function createRow(id, title, description, importance, time){
 
     // Click on a delete button to hide the current list item
     deleteRow();
+    //click on edit
+    openPopup();
 }
 
 // click create
@@ -134,8 +136,8 @@ $(document).ready(function(){
             }
     })
 })
-
-// Get the modal
+function openPopup(){
+    // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -162,7 +164,7 @@ window.onclick = function(event) {
 if (event.target == modal) {
     modal.style.display = "none";
 }}
-
+}
 
 // Click on a remove button to hide the current list item
 function deleteRow(){
@@ -175,4 +177,5 @@ function deleteRow(){
     }
 }
 }
+openPopup();
 deleteRow();
