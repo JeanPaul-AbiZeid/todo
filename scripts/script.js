@@ -127,7 +127,7 @@ $(document).ready(function(){
             reset();
             
             btn.length += 1;
-            // console.log(btn.length);
+            remove.length++;
         }else{
                 alert("Missing information, please fill all the form")
             }
@@ -160,5 +160,14 @@ span[0].addEventListener("click", function(){
 window.onclick = function(event) {
 if (event.target == modal) {
     modal.style.display = "none";
-}
+}}
+
+// Click on a close button to hide the current list item
+var remove = document.getElementsByClassName("delete");
+var i;
+for (i = 0; i < remove.length; i++) {
+  remove[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
 }
