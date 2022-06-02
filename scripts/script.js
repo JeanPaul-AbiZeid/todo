@@ -40,6 +40,8 @@ function reset(){
     $( ".radio-btn" ).prop( "checked", false );
 }
 
+
+//creating new list item
 function createLi(title){
     var list = document.getElementById("myList");
     var element = document.createElement("li");
@@ -94,6 +96,8 @@ function createRow(id, title, description, importance, time){
     edit_class.add("change");
     edit.innerHTML = "&#128393";
     row.appendChild(edit);
+    edit.setAttribute("id", id);
+    localStorage.setItem("id_tobe_edited",id);
 
     //remove button
     var remove = document.createElement("th")
@@ -109,7 +113,7 @@ function createRow(id, title, description, importance, time){
     openPopup();
 }
 
-
+//on load function
 $(document).ready(function(){
     for(let i = 0; i<localStorage.length; i++){
         let saved_todo = JSON.parse(localStorage.getItem(localStorage.key(i)));
@@ -158,6 +162,7 @@ $(document).ready(function(){
             }
     })
 })
+
 function openPopup(){
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -188,12 +193,14 @@ function openPopup(){
     }}
 }
 
+//removing row from table and deleting from local storage
 function removeRow(id) {
     var div = document.getElementById(id).parentElement;
     div.style.display = "none";
     localStorage.removeItem(id)
 }
 
+//removing row from table and adding to the list + updating the local storage is_done
 function setDone(id) {
     var div = document.getElementById(id).parentElement;
     div.style.display = "none";
@@ -208,6 +215,7 @@ function setDone(id) {
     localStorage.setItem(id,JSON.stringify(todo));
 }
 
+//sorting table
 const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 
     const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
@@ -221,5 +229,20 @@ const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx]
           .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
           .forEach(tr => tbody.appendChild(tr) );
     })));
+
+$("#save-button").click(function(){
+    let id = localStorage.getItem("id_tobe_edited");
+    let new_title = $("#new-title").val();
+    let new_desc = $("#new-description").val();
+    let new_point = $('input[name ="new-rating-number"]:checked').val();
+
+    let todo = JSON.parse(localStorage.getItem(id));
+
+    todo.title = new_title;
+    todo.description = new_desc;
+    todo.point = new_point;
+
+    localStorage.setItem(id, JSON.stringify(todo));
+})
 
 openPopup();
