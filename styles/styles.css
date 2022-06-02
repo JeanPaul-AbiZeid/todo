@@ -17,7 +17,7 @@
     margin-left: 10%;
     margin-right: 10%;
   }
-
+  
   /* list of todos*/
   #left-container {
     width: 35%;
@@ -99,9 +99,8 @@
   table {
     border-collapse: collapse;
     width: 80%;
-    margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;  
+    margin: 2% 10%;
+      
   }
 
   td, th {
@@ -201,4 +200,38 @@
     width: 100%;
     height: 100px;
     font-size: 20px;
+  }
+
+  @media screen and (max-width:900px){
+    #main-container{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0%;
+    }
+
+    #left-container {
+      width: 90%;
+      margin: 5% 5%;
+    }
+
+    #right-container {
+      width: 90%;
+      margin: 0% 5%;
+    }
+
+    #left-container li{
+      margin-left: 5%;
+    }
+
+    #table {
+      width: 90%;
+      margin: 5% 5%;
+    }
+    .search {
+      margin-left: 5%;
+      
+    }
+
   }
