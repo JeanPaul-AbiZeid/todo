@@ -84,6 +84,8 @@ function createRow(id, title, description, importance, time){
     done_class.add("done");
     done.innerHTML = "&#9989";
     row.appendChild(done);
+    done.setAttribute("id", id);
+    done.setAttribute('onclick',`setDone(${id});`);
 
     //edit button
     var edit = document.createElement("th")
@@ -187,6 +189,15 @@ function removeRow(id) {
     var div = document.getElementById(id).parentElement;
     div.style.display = "none";
     localStorage.removeItem(id)
+}
+
+function setDone(id) {
+    var div = document.getElementById(id).parentElement;
+    div.style.display = "none";
+    var x = div.children[1];
+    createLi(x.innerText);
+    
+    
 }
 
 // function editRow(){
