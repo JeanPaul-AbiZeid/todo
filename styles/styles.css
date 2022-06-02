@@ -123,13 +123,17 @@
     line-height: 20px;
   }
 
-  #sort {
+  .sort {
     line-height: 20px;
     padding: 0 1%;
     font-weight: bolder;
     background-color: #ff822e;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .sort:hover {
+    background-color: #ff6600;
   }
 
   /* The Modal (background) */
