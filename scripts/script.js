@@ -208,31 +208,18 @@ function setDone(id) {
     localStorage.setItem(id,JSON.stringify(todo));
 }
 
-// function editRow(){
-//     var edit_row = document.getElementsByClassName("change");
-//     var save_button = document.getElementById("save-button")
-//     var i;
-//     for (i = 0; i < edit_row.length; i++) {
-//     edit_row[i].onclick = function() {
-//         var new_info = []
-//         if($('#title').val()){
-//             var new_todo_title = $('#title').val();
-//             edit_row[i].title.innerHTML = new_todo_title;
-//         }
-//         if($('#description').val()){
-//             var todo_desc = $('#description').val();
-//             edit_row[i].title.innerHTML = new_todo_desc;
-//         }
-//         if($('input[name ="rating-number"]:checked').val()){
-//             var new_points = $('input[name ="rating-number"]:checked').val();
-//             edit_row[i].title.innerHTML = new_todo_points;
-//         save_button.onclick = function(){
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 
-//         }
-//         }
-    
-//     }
-// }
-// }
+    const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+        v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+        )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+    document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+        const table = th.closest('table');
+        const tbody = table.querySelector('#myTable');
+        Array.from(tbody.querySelectorAll('tr'))
+          .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+          .forEach(tr => tbody.appendChild(tr) );
+    })));
 
 openPopup();
