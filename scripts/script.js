@@ -100,6 +100,9 @@ function createRow(id, title, description, importance, time){
     remove_class.add("delete");
     remove.innerHTML = "&#10060";
     row.appendChild(remove);
+
+    // Click on a delete button to hide the current list item
+    deleteRow();
 }
 
 // click create
@@ -126,8 +129,6 @@ $(document).ready(function(){
             //resetting values
             reset();
             
-            btn.length += 1;
-            remove.length++;
         }else{
                 alert("Missing information, please fill all the form")
             }
@@ -162,12 +163,16 @@ if (event.target == modal) {
     modal.style.display = "none";
 }}
 
-// Click on a close button to hide the current list item
-var remove = document.getElementsByClassName("delete");
-var i;
-for (i = 0; i < remove.length; i++) {
-  remove[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+
+// Click on a remove button to hide the current list item
+function deleteRow(){
+    var delete_row = document.getElementsByClassName("delete");
+    var i;
+    for (i = 0; i < delete_row.length; i++) {
+    delete_row[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+    }
 }
+}
+deleteRow();
