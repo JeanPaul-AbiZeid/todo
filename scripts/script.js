@@ -113,14 +113,18 @@ function createRow(id, title, description, importance, time){
 $(document).ready(function(){
     for(let i = 0; i<localStorage.length; i++){
         let saved_todo = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        
+        if(saved_todo.is_done == false){
         let id = saved_todo.id;
         let title = saved_todo.title;
         let description = saved_todo.description;
         let point = saved_todo.point;
         let date = saved_todo.date;
 
-        createRow(id, title, description, point, date);
+        createRow(id, title, description, point, date);}
+        else{
+            let title = saved_todo.title;
+            createLi(title);
+        }
               
     }
 })
@@ -142,9 +146,8 @@ $(document).ready(function(){
             let id = randomId();
             
             //adding
-            createLi(title);
             createRow(id, title, desc, point, time);
-            task = { id: id, title: title, description: desc, point: point, date: time }
+            task = { id: id, title: title, description: desc, point: point, date: time, is_done: false }
             localStorage.setItem(id, JSON.stringify(task))
 
             //resetting values
@@ -194,10 +197,15 @@ function removeRow(id) {
 function setDone(id) {
     var div = document.getElementById(id).parentElement;
     div.style.display = "none";
-    var x = div.children[1];
-    createLi(x.innerText);
-    
-    
+
+    let todo = JSON.parse(localStorage.getItem(id));
+
+    var title = div.children[1];
+    createLi(title.innerText);
+
+    todo.is_done = true;
+
+    localStorage.setItem(id,JSON.stringify(todo));
 }
 
 // function editRow(){
