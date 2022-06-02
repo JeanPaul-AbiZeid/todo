@@ -75,6 +75,28 @@
                     <th class="button delete">&#10060</th>
                 </tr>
             </tbody>
+
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="close">&times;</span><br/><br/>
+                <form class="form">
+                    <input type="text" placeholder="New Title" id="new-title"><br/>
+                    <!-- description of todo -->
+                    <textarea type="text" placeholder="New Description" id="new-description"></textarea>
+                    <!-- importance -->
+                    <div id="new-importance">
+                        <h4>Importance:</h4>
+                        <label>1</label><input type="radio" name="new-rating-number" class="radio-btn" value="1">
+                        <label>2</label><input type="radio" name="new-rating-number" class="radio-btn" value="2">
+                        <label>3</label><input type="radio" name="new-rating-number" class="radio-btn" value="3">
+                        <label>4</label><input type="radio" name="new-rating-number" class="radio-btn" value="4">
+                        <label>5</label><input type="radio" name="new-rating-number" class="radio-btn" value="5">
+                    </div>
+                    <button type="submit" id="change-button">Change</button>
+                </form>
+            </div>
         </table>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="./scripts/script.js"></script>
