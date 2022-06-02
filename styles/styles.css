@@ -119,8 +119,17 @@
   .search {
     margin-left: 10%;
     margin-top: 3%;
-    width: 30%;
+    width: 20%;
     line-height: 20px;
+  }
+
+  #sort {
+    line-height: 20px;
+    padding: 0 1%;
+    font-weight: bolder;
+    background-color: #ff822e;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   /* The Modal (background) */
