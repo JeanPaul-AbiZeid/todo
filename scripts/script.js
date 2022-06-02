@@ -18,12 +18,18 @@ $(document).ready(function(){
 //get title, description and importance
 function getInfo(){
     var info = []
-    var todo_title = $('#title').val();
-    var todo_desc = $('#description').val();
-    var points = $('input[name ="rating-number"]:checked').val();
-    info.push(todo_title);
-    info.push(todo_desc);
-    info.push(points);
+    if($('#title').val()){
+        var todo_title = $('#title').val();
+        info.push(todo_title);
+    }
+    if($('#description').val()){
+        var todo_desc = $('#description').val();
+        info.push(todo_desc);
+    }
+    if($('input[name ="rating-number"]:checked').val()){
+        var points = $('input[name ="rating-number"]:checked').val();
+        info.push(points);
+    }
     return info
 }
 
@@ -99,25 +105,28 @@ function createRow(id, title, description, importance, time){
 // click create
 $(document).ready(function(){
     $("#create-button").click(function(){
-        //getting info from form
-        getInfo();
-        var title = getInfo()[0];
-        var desc = getInfo()[1];
-        var point = getInfo()[2];
+        if(getInfo().length === 3){
+            //getting info from form
+            getInfo();
+            var title = getInfo()[0];
+            var desc = getInfo()[1];
+            var point = getInfo()[2];
 
-        //recording time
-        const d = new Date();
-        let time = d.getTime();
-        
-        //generating id
-        let id = randomId();
-        
-        //adding
-        createLi(title);
-        createRow(id, title, desc, point, time);
+            //recording time
+            const d = new Date();
+            let time = d.getTime();
+            
+            //generating id
+            let id = randomId();
+            
+            //adding
+            createLi(title);
+            createRow(id, title, desc, point, time);
 
-        //resetting values
-        reset();
+            //resetting values
+            reset();}else{
+                alert("Missing information, please fill all the form")
+            }
     })
 })
 
